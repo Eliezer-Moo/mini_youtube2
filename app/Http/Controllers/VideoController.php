@@ -206,4 +206,9 @@ class VideoController extends Controller
         $file = \Storage::disk('video')->get($filename);
         return new Response($file, 200);
     }
+
+    public function imprimir(){
+        $pdf = \PDF::loadView('example');
+        return $pdf->download('ejemplo.pdf');
+    }
 }
